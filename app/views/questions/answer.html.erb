@@ -1,0 +1,24 @@
+<div class="container-fluid mt-3 ml-2 d-flex justify-content-center row">
+  <h1>Stupid Coaching</h1>
+  <div class="card">
+    <h5 class="card-title"><%=@question%></h5>
+    <div class="card-body">
+      <p class="card-text"><em>-You</em></p>
+    </div>
+  </div>
+  <div class="card">
+    <h5 class="card-title">
+    <%if @question == "I am going to work"%>
+      <%="Great!"%>
+    <%elsif @question.chars[-1] == "?"%>
+      <%="Silly question, get dressed and go to work!"%>
+    <%else%>
+      <%="I don't care, get dressed and go to work!"%>
+    <%end%>
+    </h5>
+    <div class="card-body">
+      <p class="card-text"><em>-Your coach</em></p>
+    </div>
+  </div>
+  <%= link_to "Ask another question", ask_path%>
+</div>
